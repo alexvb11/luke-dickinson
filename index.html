@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Luke Dickinson — Cuts by Appointment</title>
+  <meta name="description" content="Fades and tapers by Luke Dickinson at Purdue. See the work and book a cut online." />
+  <meta name="theme-color" content="#0b0b0c" />
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+  <link rel="icon" href="assets/favicon-32.png" sizes="32x32" type="image/png" />
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png" />
+  <!-- Link previews (texts, iMessage, Instagram, etc.). After launch, make these URLs absolute:
+       https://yourdomain.com/assets/og-image.jpg — most apps ignore relative ones. -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Luke Dickinson — Cuts" />
+  <meta property="og:description" content="Fades and tapers at Purdue. Book online." />
+  <meta property="og:image" content="assets/og-image.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css?v=9" />
+</head>
+<body>
+  <div class="grain" aria-hidden="true"></div>
+
+  <header class="nav" id="nav">
+    <a href="#top" class="nav__mark">LD<span>.</span></a>
+    <nav class="nav__links">
+      <a href="#work">Work</a>
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#book" class="nav__cta">Booking</a>
+    </nav>
+  </header>
+
+  <main id="top">
+    <!-- ===== HERO: pinned stage, cards fan out as you scroll ===== -->
+    <section class="hero" data-scene="hero">
+      <div class="stage">
+        <div class="hero__title">
+          <p class="eyebrow">Cuts by appointment</p>
+          <h1><span>Luke</span><em>Dickinson</em></h1>
+        </div>
+        <figure class="hero__card" data-i="0"><img src="assets/cut-taper-side.webp" alt="Low taper with textured top, side profile" /></figure>
+        <figure class="hero__card" data-i="1"><img src="assets/cut-textured-fade.webp" alt="Drop fade with spiked texture" /></figure>
+        <figure class="hero__card" data-i="2"><img src="assets/cut-taper-back.webp" alt="Taper and messy crop from behind" /></figure>
+        <p class="hero__tagline"><span>Fades.</span> <span>Tapers.</span> <span>Texture.</span></p>
+        <div class="hero__hint"><span></span>Scroll</div>
+      </div>
+    </section>
+
+    <!-- ===== DETAIL: image unmasks to full-bleed ===== -->
+    <section class="detail" data-scene="detail">
+      <div class="stage">
+        <div class="detail__frame">
+          <img src="assets/cut-taper-side.webp" alt="Close look at a blended taper behind the ear" />
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== WORK: vertical scroll drives a horizontal track ===== -->
+    <section class="work" id="work" data-scene="work">
+      <div class="stage">
+        <div class="work__track">
+          <div class="work__intro">
+            <h2 class="section-title">Work</h2>
+          </div>
+          <!-- gallery cards are built from SITE_CONFIG.gallery in app.js -->
+          <a class="work__end" href="#book">
+            <strong>Booking</strong>
+            <span class="arrow">→</span>
+          </a>
+        </div>
+        <div class="work__progress"><span></span></div>
+      </div>
+    </section>
+
+    <!-- ===== ABOUT ===== -->
+    <section class="about" id="about">
+      <div class="about__photo reveal">
+        <div class="about__photo-inner"><img src="assets/luke.webp" alt="Portrait of Luke Dickinson" /></div>
+      </div>
+      <div class="about__copy">
+        <h2 class="section-title reveal">About</h2>
+        <p class="reveal">Whats up, I’m Luke Dickinson a senior at Purdue specializing in fades and tapers. Come get a cut I’ll take u from homeless to never hoeless</p>
+      </div>
+    </section>
+
+    <!-- ===== MARQUEE ===== -->
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee__row">
+        <span>Low taper</span><i>✦</i><span>Drop fade</span><i>✦</i><span>Burst fade</span><i>✦</i><span>Textured crop</span><i>✦</i><span>Scissor work</span><i>✦</i><span>Beard line</span><i>✦</i>
+        <span>Low taper</span><i>✦</i><span>Drop fade</span><i>✦</i><span>Burst fade</span><i>✦</i><span>Textured crop</span><i>✦</i><span>Scissor work</span><i>✦</i><span>Beard line</span><i>✦</i>
+      </div>
+    </div>
+
+    <!-- ===== SERVICES ===== -->
+    <section class="services" id="services">
+      <div class="section-head">
+        <h2 class="section-title reveal">Services</h2>
+      </div>
+      <ul class="services__list" id="servicesList"></ul>
+      <p class="services__note reveal" id="servicesNote"></p>
+    </section>
+
+    <!-- ===== REVIEWS (hidden until SITE_CONFIG.reviews has entries) ===== -->
+    <section class="reviews" id="reviews" hidden>
+      <div class="section-head">
+        <h2 class="section-title reveal">Reviews</h2>
+      </div>
+      <ul class="reviews__list" id="reviewsList"></ul>
+    </section>
+
+    <!-- ===== BOOKING ===== -->
+    <section class="book" id="book">
+      <div class="section-head">
+        <h2 class="section-title reveal">Booking</h2>
+      </div>
+
+      <div class="booker reveal" id="booker">
+        <div class="booker__closed" id="bookerClosed" hidden>
+          <strong>Online booking opens soon.</strong>
+          <span id="bookerClosedContact"></span>
+        </div>
+        <div class="booker__step">
+          <div class="booker__label"><span>1</span>Service</div>
+          <div class="chips" id="serviceChips" role="radiogroup" aria-label="Service"></div>
+        </div>
+
+        <div class="booker__step">
+          <div class="booker__label">
+            <span>2</span>Day
+            <div class="booker__arrows">
+              <button type="button" id="daysPrev" aria-label="Earlier days">←</button>
+              <button type="button" id="daysNext" aria-label="Later days">→</button>
+            </div>
+          </div>
+          <div class="days" id="days" role="radiogroup" aria-label="Day"></div>
+        </div>
+
+        <div class="booker__step">
+          <div class="booker__label"><span>3</span>Time <small id="dayLabel"></small></div>
+          <div class="slots" id="slots"></div>
+        </div>
+
+        <form class="booker__step booker__form" id="bookForm" novalidate>
+          <div class="booker__label"><span>4</span>Your details</div>
+          <div class="fields">
+            <label><span>Name</span><input name="name" required autocomplete="name" placeholder="First & last" /></label>
+            <label><span>Phone</span><input name="phone" required type="tel" autocomplete="tel" placeholder="So Luke can text you" /></label>
+            <label class="full"><span>Email</span><input name="email" type="email" required autocomplete="email" placeholder="Your calendar invite goes here" /></label>
+            <label class="full"><span>Notes <small>(optional)</small></span><textarea name="notes" rows="2" placeholder="What are you going for? Link a reference pic, etc."></textarea></label>
+          </div>
+          <div class="summary" id="summary">Choose a service, day, and time.</div>
+          <button class="btn" type="submit" id="submitBtn" disabled>Book</button>
+          <p class="form-error" id="formError" role="alert"></p>
+        </form>
+
+        <div class="confirm" id="confirm" hidden>
+          <div class="confirm__check">✓</div>
+          <h3>You're on the books.</h3>
+          <p id="confirmText"></p>
+          <ul class="confirm__info" id="confirmInfo"></ul>
+          <div class="confirm__actions">
+            <button class="btn btn--ghost" type="button" id="gcalBtn">Add to Google Calendar</button>
+            <button class="btn btn--ghost" type="button" id="icsBtn">Apple / Outlook</button>
+            <button class="btn btn--ghost" type="button" id="againBtn">Book another</button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer__big">Luke <em>Dickinson</em></div>
+    <div class="footer__row">
+      <span id="footLocation"></span>
+      <span id="footContact"></span>
+      <span>© <span id="year"></span></span>
+    </div>
+    <button type="button" class="stealth" id="stealth" aria-label="Staff login"></button>
+  </footer>
+
+  <!-- ===== Admin: password gate ===== -->
+  <div class="lock" id="lock" hidden>
+    <form class="lock__box" id="lockForm">
+      <button type="button" class="x" data-close aria-label="Close">×</button>
+      <input type="password" name="pw" placeholder="Password" autocomplete="current-password" required />
+      <button class="btn" type="submit">Enter</button>
+      <p class="form-error" id="lockError" role="alert"></p>
+    </form>
+  </div>
+
+  <!-- ===== Admin: time off ===== -->
+  <div class="admin" id="admin" hidden>
+    <div class="admin__panel">
+      <header class="admin__head">
+        <div class="admin__tabs" role="tablist">
+          <button type="button" role="tab" data-tab="timeoff" aria-selected="true">Time off</button>
+          <button type="button" role="tab" data-tab="classes" aria-selected="false">Classes</button>
+        </div>
+        <div class="admin__head-actions">
+          <button type="button" class="btn btn--ghost" id="adminLogout">Log out</button>
+          <button type="button" class="x" data-close aria-label="Close">×</button>
+        </div>
+      </header>
+      <p class="admin__banner" id="adminBanner" hidden></p>
+
+      <div class="admin__pane" data-pane="timeoff">
+      <form class="admin__form" id="blockForm">
+        <div class="admin__quick">
+          <span>Quick:</span>
+          <button type="button" data-quick="today">Today</button>
+          <button type="button" data-quick="tomorrow">Tomorrow</button>
+          <button type="button" data-quick="sat">Next Saturday</button>
+          <button type="button" data-quick="weekend">Next weekend</button>
+        </div>
+        <div class="fields fields--admin">
+          <label><span>From</span><input type="date" name="from" required /></label>
+          <label><span>To</span><input type="date" name="to" required /></label>
+          <label class="toggle full"><input type="checkbox" name="allDay" checked /><i></i><span>All day</span></label>
+          <label class="timeOnly"><span>Busy from</span><input type="time" name="start" value="09:00" step="900" /></label>
+          <label class="timeOnly"><span>Until</span><input type="time" name="end" value="13:00" step="900" /></label>
+          <label class="full"><span>Note <small>(only you see this)</small></span><input name="note" maxlength="80" placeholder="Vacation, game day, exam…" /></label>
+        </div>
+        <button class="btn" type="submit" id="blockBtn">Block off</button>
+        <p class="form-error" id="blockError" role="alert"></p>
+      </form>
+
+      <div class="admin__list">
+        <h4>Upcoming time off</h4>
+        <ul id="blockList"></ul>
+      </div>
+      </div>
+
+      <div class="admin__pane" data-pane="classes" hidden>
+        <div class="fields fields--admin admin__term">
+          <label class="full"><span>Semester</span><select id="termSelect"></select></label>
+          <label class="full"><span>Name</span><input id="termName" maxlength="40" /></label>
+          <label><span>First day <small>(blank = no start)</small></span><input type="date" id="termStart" /></label>
+          <label><span>Last day <small>(blank = no end)</small></span><input type="date" id="termEnd" /></label>
+        </div>
+        <p class="admin__status" id="termStatus"></p>
+
+        <div class="admin__list admin__list--tight">
+          <h4>Classes</h4>
+          <ul id="classList"></ul>
+        </div>
+
+        <form class="admin__form admin__addclass" id="classForm">
+          <h4>Add a class</h4>
+          <div class="fields fields--admin">
+            <label class="full"><span>Name</span><input name="name" maxlength="30" placeholder="ECON 47100" required /></label>
+            <div class="full daypick" id="dayPick">
+              <label><input type="checkbox" value="1" /><span>Mon</span></label>
+              <label><input type="checkbox" value="2" /><span>Tue</span></label>
+              <label><input type="checkbox" value="3" /><span>Wed</span></label>
+              <label><input type="checkbox" value="4" /><span>Thu</span></label>
+              <label><input type="checkbox" value="5" /><span>Fri</span></label>
+              <label><input type="checkbox" value="6" /><span>Sat</span></label>
+              <label><input type="checkbox" value="0" /><span>Sun</span></label>
+            </div>
+            <label><span>Starts</span><input type="time" name="start" value="09:30" step="300" required /></label>
+            <label><span>Ends</span><input type="time" name="end" value="10:20" step="300" required /></label>
+          </div>
+          <button class="btn btn--ghost" type="submit">Add class</button>
+          <p class="form-error" id="classError" role="alert"></p>
+        </form>
+
+        <div class="admin__actions">
+          <button type="button" class="btn" id="saveTerms">Save schedule</button>
+          <button type="button" class="btn btn--ghost" id="noClasses">No classes this semester</button>
+          <button type="button" class="btn btn--ghost" id="addTerm">+ New semester</button>
+        </div>
+        <p class="form-error" id="termError" role="alert"></p>
+      </div>
+    </div>
+  </div>
+
+  <script src="config.js?v=9"></script>
+  <script src="scheduler.js?v=9"></script>
+  <script src="app.js?v=9"></script>
+  <script src="admin.js?v=9"></script>
+</body>
+</html>
