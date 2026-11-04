@@ -15,7 +15,7 @@ window.SITE_CONFIG = {
   },
 
   // Full public URL once the site is live (used for link previews in texts / Instagram).
-  siteUrl: "https://alexvb11.github.io/luke-dickinson-site",
+  siteUrl: "https://alexvb11.github.io/luke-dickinson",
 
   // Services clients can pick. duration is in minutes.
   services: [
