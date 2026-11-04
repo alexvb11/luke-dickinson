@@ -112,7 +112,7 @@ After it's live:
 1. Set `siteUrl` in `config.js`.
 2. In `index.html`, change `og:image` to the full URL (`https://yourdomain.com/assets/og-image.jpg`).
    That makes the photo preview show up when the link is texted or put in his Instagram bio.
-3. After changing any file, bump the `?v=9` numbers at the bottom of `index.html` so visitors' browsers
+3. After changing any file, bump the `?v=10` numbers at the bottom of `index.html` so visitors' browsers
    load the new version.
 
 ## Fallback: Formspree (emails Luke only, no client invite)
